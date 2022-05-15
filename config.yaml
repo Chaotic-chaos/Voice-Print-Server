@@ -1,0 +1,24 @@
+# Project:       /root/data/projects/VoiceprintRecognition-Pytorch/voice-print-server
+# File Name:     config.yaml
+# Author:        Chaos
+# Email:         life0531@foxmail.com
+# Date:          2022/04/23
+
+
+debug: False
+workers: 1
+
+log:
+  level: debug
+  filename: logs/run.log
+  maxBytes: 4096              #MB
+  backupCount: 5
+  format: "%(asctime)s || %(levelname)s || %(message)s"
+
+model:
+  model_path: checkpoints/resnet34-22.pth
+  device: cuda
+  threshold: 0.71
+  audio_db_path: audio_db
+  input_shape: (1, 257, 257)
+  inference_folder: inference_audios/
